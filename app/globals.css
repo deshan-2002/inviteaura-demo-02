@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  background-color: #F6EEE0;
+  color: #3A2A1E;
+}
+
+/* Fallback for browsers without overflow-x: clip support */
+@supports not (overflow-x: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Full-viewport hero that respects mobile browser chrome (dvh with 100vh fallback) */
+.hero-full {
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

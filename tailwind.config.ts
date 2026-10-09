@@ -1,0 +1,51 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        ivory: "#F6EEE0",
+        champagne: "#EDE1C6",
+        maroon: {
+          DEFAULT: "#6E1423",
+          deep: "#4A0E18",
+        },
+        gold: {
+          DEFAULT: "#B4913F",
+          light: "#D9BE7C",
+          soft: "#C9A961",
+        },
+        ink: "#3A2A1E",
+      },
+      fontFamily: {
+        display: ["var(--font-cinzel)", "serif"],
+        body: ["var(--font-cormorant)", "serif"],
+        sans: ["var(--font-poppins)", "sans-serif"],
+      },
+      letterSpacing: {
+        widest2: "0.35em",
+      },
+      keyframes: {
+        shimmer: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+      },
+      animation: {
+        shimmer: "shimmer 8s ease-in-out infinite",
+        float: "float 6s ease-in-out infinite",
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
