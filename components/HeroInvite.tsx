@@ -227,20 +227,8 @@ export default function HeroInvite() {
           </motion.div>
         </motion.div>
 
-        {/* BOTTOM SECTION: Couple Names, Date & Button */}
+        {/* BOTTOM SECTION: Button */}
         <motion.div variants={fadeUp} className="flex w-full flex-col items-center pb-1 sm:pb-2">
-          <h1 className="whitespace-nowrap font-display text-[clamp(15px,4.2vw,18px)] tracking-[0.14em] sm:text-2xl sm:tracking-[0.22em] md:text-3xl lg:text-4xl text-maroon font-bold uppercase drop-shadow-[0_1px_2px_rgba(74,14,24,0.12)]">
-            <Letters text="Dilanka" start={3.0} />{" "}
-            <span className="text-gold font-normal px-0.5 sm:px-1">
-              <Letters text="&" start={3.25} />
-            </span>{" "}
-            <Letters text="Piyumi" start={3.5} />
-          </h1>
-
-          <p className="mt-1 sm:mt-2 font-body text-xs sm:text-base md:text-lg italic text-ink/80 font-medium tracking-wide">
-            2nd December 2026 &middot; Ratnapura, Sri Lanka
-          </p>
-
           <motion.button
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}

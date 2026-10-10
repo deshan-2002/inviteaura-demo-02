@@ -353,15 +353,6 @@ export default function InvitationPage() {
             Dilanka <span className="text-gold-light font-normal">&amp;</span> Piyumi
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-4 font-sans text-base italic text-ivory/90 sm:text-xl"
-          >
-            Wednesday, 2nd December 2026 &middot; Ratnapura, Sri Lanka
-          </motion.p>
-
           {/* scroll hint */}
           <motion.div
             initial={{ opacity: 0 }}
