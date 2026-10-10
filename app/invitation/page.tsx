@@ -189,6 +189,18 @@ const couple = {
 
 const schedule = [
   {
+    time: "9.30 AM",
+    event: "Entrance",
+    desc: "Welcoming of guests & families",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-7 sm:w-7">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+        <path d="M10 17l5-5-5-5" />
+        <path d="M15 12H3" />
+      </svg>
+    ),
+  },
+  {
     time: "9.51 AM",
     event: "Poruwa Ceremony",
     desc: "Auspicious traditional ceremony under the Poruwa",
@@ -213,6 +225,20 @@ const schedule = [
         <path d="M7 2v20" />
         <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3z" />
         <path d="M21 15v7" />
+      </svg>
+    ),
+  },
+  {
+    time: "4.30 PM",
+    event: "Farewell",
+    desc: "Blessings, farewell & departure",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-7 sm:w-7">
+        <path d="M20 12v10H4V12" />
+        <path d="M2 7h20v5H2z" />
+        <path d="M12 22V7" />
+        <path d="M12 7c-1.5 0-4-.5-4-3 0-1.5 1.5-2.5 3-2 1.2.4 1 1.5 1 3z" />
+        <path d="M12 7c1.5 0 4-.5 4-3 0-1.5-1.5-2.5-3-2-1.2.4-1 1.5-1 3z" />
       </svg>
     ),
   },
@@ -457,24 +483,6 @@ export default function InvitationPage() {
           <p className="mt-2 font-sans text-xs tracking-[0.2em] uppercase text-ink/60 sm:text-sm">
             9.30 AM &ndash; 4.30 PM
           </p>
-          <div className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row sm:gap-4">
-            <div className="flex-1 rounded-2xl border border-gold/30 bg-gradient-to-br from-maroon to-maroon-deep px-4 py-4 shadow-[0_10px_25px_-12px_rgba(74,14,24,0.5)]">
-              <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-gold-light">
-                Poruwa Ceremony
-              </p>
-              <p className="mt-1 font-sans text-base text-ivory font-semibold sm:text-lg">
-                9.51 AM
-              </p>
-            </div>
-            <div className="flex-1 rounded-2xl border border-gold/30 bg-gradient-to-br from-maroon to-maroon-deep px-4 py-4 shadow-[0_10px_25px_-12px_rgba(74,14,24,0.5)]">
-              <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-gold-light">
-                Lunch
-              </p>
-              <p className="mt-1 font-sans text-base text-ivory font-semibold sm:text-lg">
-                12.00 PM
-              </p>
-            </div>
-          </div>
         </Card>
       </section>
 
