@@ -93,11 +93,11 @@ export default function HeroInvite() {
                 The Wedding Of
               </p>
               <h1 className="mt-4 whitespace-nowrap font-display text-[clamp(16px,4.8vw,20px)] sm:text-3xl tracking-[0.2em] sm:tracking-[0.25em] text-maroon font-bold uppercase">
-                <Letters text="Ashen" start={0.35} />{" "}
+                <Letters text="Dilanka" start={0.35} />{" "}
                 <span className="text-gold font-normal">
                   <Letters text="&" start={0.65} />
                 </span>{" "}
-                <Letters text="Nethmi" start={0.85} />
+                <Letters text="Piyumi" start={0.85} />
               </h1>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -230,15 +230,15 @@ export default function HeroInvite() {
         {/* BOTTOM SECTION: Couple Names, Date & Button */}
         <motion.div variants={fadeUp} className="flex w-full flex-col items-center pb-1 sm:pb-2">
           <h1 className="whitespace-nowrap font-display text-[clamp(15px,4.2vw,18px)] tracking-[0.14em] sm:text-2xl sm:tracking-[0.22em] md:text-3xl lg:text-4xl text-maroon font-bold uppercase drop-shadow-[0_1px_2px_rgba(74,14,24,0.12)]">
-            <Letters text="Ashen" start={3.0} />{" "}
+            <Letters text="Dilanka" start={3.0} />{" "}
             <span className="text-gold font-normal px-0.5 sm:px-1">
               <Letters text="&" start={3.25} />
             </span>{" "}
-            <Letters text="Nethmi" start={3.5} />
+            <Letters text="Piyumi" start={3.5} />
           </h1>
 
           <p className="mt-1 sm:mt-2 font-body text-xs sm:text-base md:text-lg italic text-ink/80 font-medium tracking-wide">
-            12th December 2026 &middot; Colombo, Sri Lanka
+            2nd December 2026 &middot; Ratnapura, Sri Lanka
           </p>
 
           <motion.button

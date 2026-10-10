@@ -86,7 +86,7 @@ const avatarZoom = {
   },
 };
 
-const WEDDING_DATE = "2026-12-12T09:30:00+05:30";
+const WEDDING_DATE = "2026-12-02T09:30:00+05:30";
 
 /* ---------------- Countdown ---------------- */
 function useCountdown(target: string) {
@@ -176,35 +176,22 @@ function Card({
 /* ---------------- Data ---------------- */
 const couple = {
   groom: {
-    name: "Ashen Perera",
-    parents: "Son of Mr. & Mrs. P. Perera",
-    family: "Of the Perera Family, Colombo",
+    name: "Dilanka",
+    parents: "The Groom",
+    family: "Ratnapura, Sri Lanka",
   },
   bride: {
-    name: "Nethmi Silva",
-    parents: "Daughter of Mr. & Mrs. R. Silva",
-    family: "Of the Silva Family, Colombo",
+    name: "Piyumi",
+    parents: "The Bride",
+    family: "Ratnapura, Sri Lanka",
   },
 };
 
 const schedule = [
   {
-    time: "9.00 AM",
-    event: "Guest Arrival",
-    desc: "Welcome drinks & seating",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-7 sm:w-7">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-  },
-  {
-    time: "10.00 AM",
+    time: "9.51 AM",
     event: "Poruwa Ceremony",
-    desc: "Traditional ceremony under the Poruwa",
+    desc: "Auspicious traditional ceremony under the Poruwa",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-7 sm:w-7">
         <path d="M3 22h18" />
@@ -217,20 +204,9 @@ const schedule = [
     ),
   },
   {
-    time: "11.30 AM",
-    event: "Blessings",
-    desc: "Blessings from our beloved families",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-7 sm:w-7">
-        <path d="M12 3l1.9 5.7L19.7 10l-5.8 1.9L12 17.7l-1.9-5.8L4.3 10l5.8-1.9z" />
-        <path d="M19 17l.8 2.4L22 20.2l-2.2.8L19 23.4l-.8-2.4-2.2-.8 2.2-.8z" />
-      </svg>
-    ),
-  },
-  {
     time: "12.00 PM",
     event: "Lunch",
-    desc: "Celebratory lunch at the venue",
+    desc: "Celebratory wedding lunch & refreshments",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-7 sm:w-7">
         <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
@@ -240,58 +216,16 @@ const schedule = [
       </svg>
     ),
   },
-  {
-    time: "6.30 PM",
-    event: "Reception",
-    desc: "Evening reception & dinner",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-7 sm:w-7">
-        <path d="M9 2v6l-4 6a5 5 0 0 0 10 0l-4-6V2" />
-        <path d="M9 2h6" />
-        <path d="M12 22v-5" />
-      </svg>
-    ),
-  },
-  {
-    time: "8.00 PM",
-    event: "Dancing & Celebration",
-    desc: "Music, dancing & endless joy",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-7 sm:w-7">
-        <path d="M9 18V5l12-2v13" />
-        <circle cx="6" cy="18" r="3" />
-        <circle cx="18" cy="16" r="3" />
-      </svg>
-    ),
-  },
-];
-
-const loveStory = [
-  { symbol: "\u2726", title: "First Met", desc: "A chance meeting over a cup of Ceylon tea in Kandy." },
-  { symbol: "\u2661", title: "Became Friends", desc: "Long walks by the lake and countless shared sunsets." },
-  { symbol: "\u2756", title: "Engagement", desc: "Under the stars, with our families by our side." },
-  { symbol: "\u26AD", title: "Wedding Day", desc: "And now, our forever begins \u2014 we can't wait to share it with you." },
 ];
 
 const venues = [
   {
-    name: "Cinnamon Grand Colombo",
-    event: "Ceremony & Lunch",
-    address: "77 Galle Road, Colombo 03, Sri Lanka",
-    query: "Cinnamon%20Grand%20Colombo",
+    name: "Silver Ray Grand",
+    event: "Poruwa Ceremony & Lunch",
+    address: "Colombo - Batticaloa Hwy, Pelmadulla, Ratnapura",
+    query: "Silver+Ray+Grand+Pelmadulla",
+    mapUrl: "https://maps.app.goo.gl/i7DtGi27LZ7A5wLX7",
   },
-  {
-    name: "Shangri-La Colombo",
-    event: "Evening Reception",
-    address: "1 Galle Face Terrace, Colombo 02, Sri Lanka",
-    query: "Shangri-La%20Hotel%20Colombo",
-  },
-];
-
-const hotels = [
-  { name: "Shangri-La Colombo", note: "5-star stay, 2 min from venue" },
-  { name: "The Kingsbury Colombo", note: "5-star stay, 5 min away" },
-  { name: "Taj Samudra Colombo", note: "5-star stay, 10 min away" },
 ];
 
 export default function InvitationPage() {
@@ -355,7 +289,7 @@ export default function InvitationPage() {
               RSVP
             </a>
             <span className="font-sans text-[10px] tracking-[0.35em] uppercase text-gold sm:text-xs">
-              A &amp; N
+              D &amp; P
             </span>
           </div>
         </div>
@@ -374,7 +308,7 @@ export default function InvitationPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-maroon-deep/70 via-maroon-deep/45 to-ivory" />
         </motion.div>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center px-4 pb-24 pt-16 text-center sm:px-6 sm:pb-28 sm:pt-20">
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-4 pb-24 pt-16 text-center sm:px-6 sm:pb-28 sm:pt-20">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -388,9 +322,9 @@ export default function InvitationPage() {
             initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 font-sans text-3xl tracking-[0.16em] text-ivory font-bold uppercase drop-shadow-[0_4px_14px_rgba(74,14,24,0.45)] sm:text-5xl md:text-6xl"
+            className="mt-5 whitespace-nowrap font-sans text-2xl tracking-[0.16em] text-ivory font-bold uppercase drop-shadow-[0_4px_14px_rgba(74,14,24,0.45)] sm:text-4xl md:text-5xl lg:text-[3.25rem]"
           >
-            Ashen <span className="text-gold-light font-normal">&amp;</span> Nethmi
+            Dilanka <span className="text-gold-light font-normal">&amp;</span> Piyumi
           </motion.h1>
 
           <motion.p
@@ -399,7 +333,7 @@ export default function InvitationPage() {
             transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="mt-4 font-sans text-base italic text-ivory/90 sm:text-xl"
           >
-            Saturday, 12th December 2026 &middot; Colombo, Sri Lanka
+            Wednesday, 2nd December 2026 &middot; Ratnapura, Sri Lanka
           </motion.p>
 
           {/* scroll hint */}
@@ -447,77 +381,62 @@ export default function InvitationPage() {
       </section>
 
       {/* 3. COUPLE INFORMATION */}
-      <section className="border-y border-gold/20 bg-champagne/50 py-14 sm:py-20">
+      <section className="border-y border-gold/20 bg-champagne/30 py-14 sm:py-20">
         <div className="mx-auto w-full max-w-3xl px-4 sm:px-6">
-          <SectionHeading label="The Happy Couple" title="Our Story Begins" />
 
-          <div className="relative mt-12 grid gap-8 sm:mt-14 sm:grid-cols-2 sm:gap-8">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: 0.05 }}
-              className="group overflow-hidden rounded-3xl border border-gold/20 bg-white shadow-[0_18px_45px_-20px_rgba(74,14,24,0.3)] transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/40 hover:shadow-[0_26px_55px_-22px_rgba(74,14,24,0.45)]"
-            >
-              <div className="relative aspect-[4/5] w-full overflow-hidden">
-                <Image
-                  src="/images/Boy.png"
-                  alt="The Groom"
-                  fill
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6 text-center sm:p-7">
-                <p className="font-sans text-[10px] font-medium uppercase tracking-[0.3em] text-gold">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex flex-col items-center text-center"
+          >
+            {/* Small eyebrow only — no competing bold title */}
+            <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.4em] text-gold">
+              The Happy Couple
+            </p>
+            <div className="mt-3 h-px w-10 bg-gold/40" />
+
+            {/* Names — the visual hero of this section */}
+            <div className="mt-10 flex w-full flex-col items-center gap-6 sm:mt-12 sm:flex-row sm:justify-center sm:gap-12">
+              {/* Groom */}
+              <div className="text-center">
+                <p className="font-sans text-[9px] font-medium uppercase tracking-[0.35em] text-ink/40">
                   The Groom
                 </p>
-                <h3 className="mt-2 font-sans text-xl font-semibold tracking-tight text-maroon sm:text-2xl">
+                <h3 className="mt-3 font-display text-5xl font-bold text-maroon sm:text-6xl md:text-7xl">
                   {couple.groom.name}
                 </h3>
-                <div className="mx-auto mt-3 h-px w-10 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-                <p className="mt-3 font-sans text-sm font-light text-ink/60 sm:text-base">
-                  {couple.groom.parents}
-                </p>
-                <p className="mt-1.5 font-sans text-[10px] font-light uppercase tracking-[0.25em] text-ink/40">
+                <p className="mt-2.5 font-sans text-[10px] uppercase tracking-[0.25em] text-ink/45">
                   {couple.groom.family}
                 </p>
               </div>
-            </motion.div>
 
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: 0.15 }}
-              className="group overflow-hidden rounded-3xl border border-gold/20 bg-white shadow-[0_18px_45px_-20px_rgba(74,14,24,0.3)] transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/40 hover:shadow-[0_26px_55px_-22px_rgba(74,14,24,0.45)]"
-            >
-              <div className="relative aspect-[4/5] w-full overflow-hidden">
-                <Image
-                  src="/images/woman.png"
-                  alt="The Bride"
-                  fill
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
+              {/* & divider */}
+              <div className="flex flex-col items-center">
+                <div className="h-8 w-px bg-gold/30 sm:hidden" />
+                <span className="my-1 font-display text-xl font-light text-gold/80 sm:my-0 sm:text-2xl">&amp;</span>
+                <div className="h-8 w-px bg-gold/30 sm:hidden" />
               </div>
-              <div className="p-6 text-center sm:p-7">
-                <p className="font-sans text-[10px] font-medium uppercase tracking-[0.3em] text-gold">
+
+              {/* Bride */}
+              <div className="text-center">
+                <p className="font-sans text-[9px] font-medium uppercase tracking-[0.35em] text-ink/40">
                   The Bride
                 </p>
-                <h3 className="mt-2 font-sans text-xl font-semibold tracking-tight text-maroon sm:text-2xl">
+                <h3 className="mt-3 font-display text-5xl font-bold text-maroon sm:text-6xl md:text-7xl">
                   {couple.bride.name}
                 </h3>
-                <div className="mx-auto mt-3 h-px w-10 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-                <p className="mt-3 font-sans text-sm font-light text-ink/60 sm:text-base">
-                  {couple.bride.parents}
-                </p>
-                <p className="mt-1.5 font-sans text-[10px] font-light uppercase tracking-[0.25em] text-ink/40">
+                <p className="mt-2.5 font-sans text-[10px] uppercase tracking-[0.25em] text-ink/45">
                   {couple.bride.family}
                 </p>
               </div>
-            </motion.div>
-          </div>
+            </div>
+
+            {/* Bottom accent line */}
+            <div className="mt-10 h-px w-16 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+          </motion.div>
+
         </div>
       </section>
 
@@ -527,29 +446,32 @@ export default function InvitationPage() {
 
         <Card variant={scaleIn} className="mt-10 text-center sm:mt-12">
           <p className="font-sans text-sm tracking-[0.35em] uppercase text-gold">
-            Saturday
+            Wednesday
           </p>
           <p className="mt-3 font-sans text-4xl tracking-[0.08em] text-maroon font-bold sm:text-6xl">
-            20
+            02
           </p>
           <p className="mt-2 font-sans text-lg tracking-[0.25em] uppercase text-maroon sm:text-xl">
             December &middot; 2026
           </p>
-            <div className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row sm:gap-4">
+          <p className="mt-2 font-sans text-xs tracking-[0.2em] uppercase text-ink/60 sm:text-sm">
+            9.30 AM &ndash; 4.30 PM
+          </p>
+          <div className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row sm:gap-4">
             <div className="flex-1 rounded-2xl border border-gold/30 bg-gradient-to-br from-maroon to-maroon-deep px-4 py-4 shadow-[0_10px_25px_-12px_rgba(74,14,24,0.5)]">
               <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-gold-light">
-                Ceremony
+                Poruwa Ceremony
               </p>
               <p className="mt-1 font-sans text-base text-ivory font-semibold sm:text-lg">
-                10.00 AM
+                9.51 AM
               </p>
             </div>
             <div className="flex-1 rounded-2xl border border-gold/30 bg-gradient-to-br from-maroon to-maroon-deep px-4 py-4 shadow-[0_10px_25px_-12px_rgba(74,14,24,0.5)]">
               <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-gold-light">
-                Reception
+                Lunch
               </p>
               <p className="mt-1 font-sans text-base text-ivory font-semibold sm:text-lg">
-                6.30 PM
+                12.00 PM
               </p>
             </div>
           </div>
@@ -606,7 +528,7 @@ export default function InvitationPage() {
 
       {/* 6. WEDDING VENUE */}
       <section className="mx-auto w-full max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
-        <SectionHeading label="Locations" title="Wedding Venues" />
+        <SectionHeading label="Location" title="Wedding Venue" />
 
         <div className="mt-10 flex flex-col gap-4 sm:mt-12 sm:gap-6">
           {venues.map((venue, i) => (
@@ -623,7 +545,7 @@ export default function InvitationPage() {
                     {venue.address}
                   </p>
                   <a
-                    href={`https://www.google.com/maps/dir/?api=1&destination=${venue.query}`}
+                    href={venue.mapUrl || `https://www.google.com/maps/dir/?api=1&destination=${venue.query}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-5 inline-block cursor-pointer rounded-full bg-gradient-to-r from-maroon via-maroon-deep to-maroon px-6 py-2.5 font-sans text-[10px] font-medium tracking-[0.25em] uppercase text-ivory shadow-[0_8px_20px_-4px_rgba(74,14,24,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-4px_rgba(74,14,24,0.5)] sm:text-[11px]"
@@ -700,129 +622,6 @@ export default function InvitationPage() {
         </div>
       </section>
 
-      {/* 8. LOVE STORY */}
-      <section className="mx-auto w-full max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
-        <SectionHeading label="How It All Began" title="Our Love Story" />
-
-        <div className="relative mt-12 flex flex-col">
-          <motion.span
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.4, ease: "easeOut" }}
-            className="absolute bottom-4 left-[27px] top-4 w-px origin-top bg-gradient-to-b from-gold/60 via-gold/40 to-gold/60 sm:left-[35px]"
-          />
-          {loveStory.map((milestone, i) => (
-            <motion.div
-              key={milestone.title}
-              variants={slideLeft}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ delay: i * 0.15 }}
-              className="relative flex gap-5 pb-10 last:pb-0 sm:gap-7"
-            >
-              <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-gold/50 bg-ivory shadow-[0_6px_18px_-6px_rgba(74,14,24,0.3)] sm:h-[70px] sm:w-[70px]">
-                <span className="font-sans text-xl text-gold sm:text-2xl">
-                  {milestone.symbol}
-                </span>
-              </div>
-              <div className="pt-2 sm:pt-3">
-                <h3 className="font-sans text-base uppercase text-maroon font-semibold tracking-[0.12em] sm:text-lg">
-                  {milestone.title}
-                </h3>
-                <p className="mt-1.5 max-w-md font-sans text-sm italic text-ink/70 sm:text-base">
-                  {milestone.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* 9. COUPLE GALLERY */}
-      <section className="border-y border-gold/20 bg-champagne/50 py-14 sm:py-20">
-        <div className="mx-auto w-full max-w-3xl px-4 sm:px-6">
-          <SectionHeading label="Moments Together" title="Couple Gallery" />
-
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-5" style={{ perspective: 1000 }}>
-            <motion.div
-              variants={scaleIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="group relative aspect-[3/4] overflow-hidden rounded-3xl border border-gold/25 shadow-[0_12px_35px_-12px_rgba(74,14,24,0.3)]"
-            >
-              <Image
-                src="/images/1.png"
-                alt="The couple portrait"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </motion.div>
-            <motion.div
-              variants={flipIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: 0.12 }}
-              className="group relative aspect-[3/4] overflow-hidden rounded-3xl border border-gold/25 shadow-[0_12px_35px_-12px_rgba(74,14,24,0.3)]"
-            >
-              <Image
-                src="/images/2.png"
-                alt="The couple pre-shoot"
-                fill
-                className="object-cover object-bottom transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-maroon-deep/70 to-transparent p-4 text-center">
-                <span className="font-sans text-[9px] font-medium tracking-[0.3em] uppercase text-ivory">
-                  Pre-shoot
-                </span>
-              </div>
-            </motion.div>
-            <motion.div
-              variants={scaleIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: 0.24 }}
-              className="group relative aspect-[3/4] overflow-hidden rounded-3xl border border-gold/25 shadow-[0_12px_35px_-12px_rgba(74,14,24,0.3)]"
-            >
-              <Image
-                src="/images/3.png"
-                alt="The couple engagement"
-                fill
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-maroon-deep/70 to-transparent p-4 text-center">
-                <span className="font-sans text-[9px] font-medium tracking-[0.3em] uppercase text-ivory">
-                  Engagement
-                </span>
-              </div>
-            </motion.div>
-            <motion.div
-              variants={flipIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: 0.36 }}
-              className="group relative aspect-[3/4] overflow-hidden rounded-3xl border border-gold/25 shadow-[0_12px_35px_-12px_rgba(74,14,24,0.3)]"
-            >
-              <Image
-                src="/images/4.png"
-                alt="Wedding day decor"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-maroon-deep/70 to-transparent p-4 text-center">
-                <span className="font-sans text-[9px] font-medium tracking-[0.3em] uppercase text-ivory">
-                  Wedding Day
-                </span>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* 10. PERSONALIZED GUEST SECTION */}
       <section ref={guestRef} className="relative overflow-hidden py-14 sm:py-20">
@@ -878,16 +677,16 @@ export default function InvitationPage() {
                   >
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>
-                  The Bride
+                  The Groom
                 </span>
-                <span className="font-sans text-xs font-light text-ink/50">111111111</span>
+                <span className="font-sans text-xs font-light text-ink/50">0703225632</span>
               </div>
               <h3 className="mt-4 font-sans text-xl font-semibold uppercase text-maroon sm:text-2xl">
-                {couple.bride.name}
+                {couple.groom.name}
               </h3>
               <div className="mt-5 flex justify-center gap-3">
                 <a
-                  href="tel:111111111"
+                  href="tel:0703225632"
                   className="group flex flex-1 items-center justify-center gap-2 rounded-xl border border-gold/40 bg-ivory/80 px-4 py-3 font-sans text-[10px] font-medium tracking-[0.2em] uppercase text-maroon shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-maroon hover:bg-maroon hover:text-ivory hover:shadow-lg"
                 >
                   <svg
@@ -905,7 +704,7 @@ export default function InvitationPage() {
                   Call
                 </a>
                 <a
-                  href="https://wa.me/111111111"
+                  href="https://wa.me/94703225632"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-1 items-center justify-center gap-2 rounded-xl border border-gold/40 bg-ivory/80 px-4 py-3 font-sans text-[10px] font-medium tracking-[0.2em] uppercase text-maroon shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white hover:shadow-lg"
@@ -938,16 +737,16 @@ export default function InvitationPage() {
                   >
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>
-                  The Groom
+                  The Bride
                 </span>
-                <span className="font-sans text-xs font-light text-ink/50">111111111</span>
+                <span className="font-sans text-xs font-light text-ink/50">0703225638</span>
               </div>
               <h3 className="mt-4 font-sans text-xl font-semibold uppercase text-maroon sm:text-2xl">
-                {couple.groom.name}
+                {couple.bride.name}
               </h3>
               <div className="mt-5 flex justify-center gap-3">
                 <a
-                  href="tel:111111111"
+                  href="tel:0703225638"
                   className="group flex flex-1 items-center justify-center gap-2 rounded-xl border border-gold/40 bg-ivory/80 px-4 py-3 font-sans text-[10px] font-medium tracking-[0.2em] uppercase text-maroon shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-maroon hover:bg-maroon hover:text-ivory hover:shadow-lg"
                 >
                   <svg
@@ -965,7 +764,7 @@ export default function InvitationPage() {
                   Call
                 </a>
                 <a
-                  href="https://wa.me/111111111"
+                  href="https://wa.me/94703225638"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-1 items-center justify-center gap-2 rounded-xl border border-gold/40 bg-ivory/80 px-4 py-3 font-sans text-[10px] font-medium tracking-[0.2em] uppercase text-maroon shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white hover:shadow-lg"
@@ -986,93 +785,6 @@ export default function InvitationPage() {
         </div>
       </section>
 
-      {/* 12. DRESS CODE */}
-      <section className="border-y border-gold/20 bg-champagne/50 py-14 sm:py-20">
-        <div className="mx-auto w-full max-w-3xl px-4 sm:px-6">
-          <SectionHeading label="What To Wear" title="Dress Code" />
-
-          <motion.div
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-            }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:mt-12 sm:gap-4"
-          >
-            {["Traditional", "Formal", "White & Gold Theme"].map((code) => (
-              <motion.span
-                key={code}
-                variants={popIn}
-                className="rounded-full border border-gold/40 bg-white/80 px-7 py-3 font-sans text-[10px] font-medium tracking-[0.25em] uppercase text-maroon shadow-[0_8px_22px_-8px_rgba(74,14,24,0.25)] sm:text-[11px]"
-              >
-                {code}
-              </motion.span>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 13. ACCOMMODATION */}
-      <section className="mx-auto w-full max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
-        <SectionHeading label="Stay With Us" title="Accommodation" />
-
-        <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-3 sm:gap-5">
-          {hotels.map((hotel, i) => (
-            <Card key={hotel.name} variant={popIn} delay={i * 0.1} className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-maroon to-maroon-deep shadow-[0_10px_25px_-10px_rgba(74,14,24,0.55)]">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-7 w-7 text-gold-light"
-                  aria-hidden="true"
-                >
-                  <path d="M3 21h18" />
-                  <path d="M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14" />
-                  <path d="M9 21v-4h6v4" />
-                  <path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01" />
-                </svg>
-              </div>
-              <div className="mt-4 flex items-center justify-center gap-1">
-                {[0, 1, 2, 3, 4].map((star) => (
-                  <svg
-                    key={star}
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-3.5 w-3.5 text-gold"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
-                  </svg>
-                ))}
-              </div>
-              <h3 className="mt-2.5 font-sans text-base font-semibold text-maroon sm:text-lg">
-                {hotel.name}
-              </h3>
-              <div className="mx-auto mt-2 h-px w-10 bg-gold/40" />
-              <p className="mt-2 font-sans text-xs font-light text-ink/70 sm:text-sm">
-                {hotel.note}
-              </p>
-            </Card>
-          ))}
-        </div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-8 text-center font-sans text-sm italic text-ink/60"
-        >
-          Contact: Mrs. Kamala Perera &middot; 111111111 (for room reservations)
-        </motion.p>
-      </section>
-
       {/* 14. RSVP FORM */}
       <RsvpForm />
 
@@ -1090,18 +802,18 @@ export default function InvitationPage() {
           <p className="font-sans text-[10px] tracking-[0.4em] uppercase text-gold-light">
             Thank You
           </p>
-          <h2 className="mt-3 font-sans text-2xl tracking-[0.14em] uppercase text-ivory font-bold sm:text-3xl">
+          <h2 className="mt-3 font-display text-2xl tracking-[0.14em] uppercase text-ivory font-bold sm:text-3xl">
             We Can&rsquo;t Wait To Celebrate With You
           </h2>
           <div className="mx-auto mt-6 max-w-[220px]">
             <OrnamentalDivider />
           </div>
-          <p className="mt-6 font-sans text-base italic text-ivory/80">With Love,</p>
-          <p className="mt-2 font-sans text-xl tracking-[0.2em] uppercase text-gold-light sm:text-2xl">
-            Ashen <span className="text-ivory">&amp;</span> Nethmi
+          <p className="mt-6 font-body text-lg italic text-ivory/80">With Love,</p>
+          <p className="mt-2 font-display text-xl tracking-[0.2em] uppercase text-gold-light sm:text-2xl">
+            Dilanka <span className="font-body italic font-normal text-ivory px-1">&amp;</span> Piyumi
           </p>
           <p className="mt-4 font-sans text-[9px] tracking-[0.35em] uppercase text-ivory/50">
-            12 &middot; 12 &middot; 2026 &mdash; Colombo, Sri Lanka
+            02 &middot; 12 &middot; 2026 &mdash; Ratnapura, Sri Lanka
           </p>
         </div>
       </footer>
@@ -1116,7 +828,7 @@ export default function InvitationPage() {
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             onClick={scrollToTop}
             aria-label="Back to top"
-            className="fixed bottom-6 right-6 z-50 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-white/40 bg-gradient-to-br from-maroon/70 to-maroon-deep/70 shadow-[0_12px_30px_-10px_rgba(74,14,24,0.6)] backdrop-blur-xl transition-colors duration-300 hover:border-gold-light"
+            className="fixed bottom-4 right-4 z-40 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/40 bg-gradient-to-br from-maroon/75 to-maroon-deep/75 shadow-[0_8px_24px_-6px_rgba(74,14,24,0.5)] backdrop-blur-xl transition-all duration-300 hover:border-gold-light sm:bottom-6 sm:right-6 sm:h-14 sm:w-14"
           >
             <svg viewBox="0 0 56 56" className="pointer-events-none absolute inset-0 h-full w-full -rotate-90" aria-hidden="true">
               <circle
@@ -1150,7 +862,7 @@ export default function InvitationPage() {
                 strokeWidth="2.2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-5 w-5 text-gold-light"
+                className="h-4 w-4 text-gold-light sm:h-5 sm:w-5"
                 aria-hidden="true"
               >
                 <path d="M12 19V5" />

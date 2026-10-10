@@ -26,6 +26,16 @@ const config: Config = {
         body: ["var(--font-cormorant)", "serif"],
         sans: ["var(--font-poppins)", "sans-serif"],
       },
+      fontSize: {
+        // ── Admin dashboard suitable type scale (compact, Poppins-based) ──
+        "admin-micro": ["0.6875rem", { lineHeight: "1rem", letterSpacing: "0.04em" }], // 11px — hints, timestamps
+        "admin-small": ["0.75rem", { lineHeight: "1.125rem" }], // 12px — body small, buttons
+        "admin-body": ["0.8125rem", { lineHeight: "1.375rem" }], // 13px — table cells, inputs
+        "admin-title": ["1.25rem", { lineHeight: "1.6rem", letterSpacing: "0.02em" }], // 20px — page title (mobile)
+        "admin-title-lg": ["1.375rem", { lineHeight: "1.75rem", letterSpacing: "0.02em" }], // 22px — page title (desktop)
+        "admin-kpi": ["1.375rem", { lineHeight: "1.75rem", letterSpacing: "-0.01em" }], // 22px — KPI numbers
+        "admin-modal": ["1rem", { lineHeight: "1.5rem" }], // 16px — modal title
+      },
       letterSpacing: {
         widest2: "0.35em",
       },

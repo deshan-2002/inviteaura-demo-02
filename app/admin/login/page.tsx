@@ -83,19 +83,19 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-ivory px-4 py-12">
+    <div className="admin-shell flex min-h-screen flex-col items-center justify-center bg-ivory px-4 py-12 font-sans">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-md overflow-hidden rounded-3xl border border-gold/30 bg-white/95 p-8 shadow-[0_18px_50px_-20px_rgba(74,14,24,0.3)] sm:p-10"
+        className="w-full max-w-md overflow-hidden rounded-3xl border border-gold/30 bg-white/95 p-6 min-[400px]:p-8 shadow-[0_18px_50px_-20px_rgba(74,14,24,0.3)] sm:p-10"
       >
         {/* Header */}
         <div className="text-center">
           <p className="font-sans text-[10px] tracking-[0.35em] uppercase text-gold">
             Administrative Portal
           </p>
-          <h1 className="mt-2 font-sans text-2xl font-bold uppercase tracking-[0.1em] text-maroon sm:text-3xl">
+          <h1 className="mt-2 font-sans text-admin-title-lg font-bold uppercase tracking-[0.1em] text-maroon">
             Admin Sign In
           </h1>
           <div className="mt-4">
@@ -122,7 +122,7 @@ export default function AdminLoginPage() {
           <div>
             <label
               htmlFor="email"
-              className="block font-sans text-xs font-semibold uppercase tracking-widest text-maroon"
+              className="block font-sans text-admin-small font-semibold uppercase tracking-widest text-maroon"
             >
               Email Address
             </label>
@@ -134,14 +134,14 @@ export default function AdminLoginPage() {
               placeholder="name@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1.5 w-full rounded-xl border border-gold/40 bg-ivory/50 px-4 py-3 font-sans text-sm text-ink placeholder-ink/40 transition-colors focus:border-maroon focus:bg-white focus:outline-none focus:ring-1 focus:ring-maroon"
+              className="mt-1.5 w-full rounded-xl border border-gold/40 bg-ivory/50 px-4 py-3 font-sans text-admin-body text-ink placeholder-ink/40 transition-colors focus:border-maroon focus:bg-white focus:outline-none focus:ring-1 focus:ring-maroon"
             />
           </div>
 
           <div>
             <label
               htmlFor="password"
-              className="block font-sans text-xs font-semibold uppercase tracking-widest text-maroon"
+              className="block font-sans text-admin-small font-semibold uppercase tracking-widest text-maroon"
             >
               Password
             </label>
@@ -153,7 +153,7 @@ export default function AdminLoginPage() {
               placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1.5 w-full rounded-xl border border-gold/40 bg-ivory/50 px-4 py-3 font-sans text-sm text-ink placeholder-ink/40 transition-colors focus:border-maroon focus:bg-white focus:outline-none focus:ring-1 focus:ring-maroon"
+              className="mt-1.5 w-full rounded-xl border border-gold/40 bg-ivory/50 px-4 py-3 font-sans text-admin-body text-ink placeholder-ink/40 transition-colors focus:border-maroon focus:bg-white focus:outline-none focus:ring-1 focus:ring-maroon"
             />
           </div>
 

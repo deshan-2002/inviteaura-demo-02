@@ -22,7 +22,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ashen & Nethmi | Wedding Invitation",
+  title: "Dilanka & Piyumi | Wedding Invitation",
   description: "Together with their families, request the honour of your presence.",
 };
 
