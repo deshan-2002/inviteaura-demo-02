@@ -122,7 +122,6 @@ export default function AdminDashboardPage() {
   const [loadingData, setLoadingData] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState<"all" | "attending" | "not_attending">("all");
   const [selected, setSelected] = useState<RSVP | null>(null);
   const [copiedId, setCopiedId] = useState(false);
@@ -275,17 +274,9 @@ export default function AdminDashboardPage() {
     return rsvps.filter((item) => {
       if (statusFilter === "attending" && !item.attending) return false;
       if (statusFilter === "not_attending" && item.attending) return false;
-      if (searchTerm.trim()) {
-        const term = searchTerm.toLowerCase();
-        return (
-          item.guest_name.toLowerCase().includes(term) ||
-          item.contact?.toLowerCase().includes(term) ||
-          item.message?.toLowerCase().includes(term)
-        );
-      }
       return true;
     });
-  }, [rsvps, statusFilter, searchTerm]);
+  }, [rsvps, statusFilter]);
 
   const stats = useMemo(() => {
     const totalResponses = rsvps.length;
@@ -298,20 +289,45 @@ export default function AdminDashboardPage() {
     return { totalResponses, attendingCount, notAttendingCount, confirmedAttendees, attendanceRate };
   }, [rsvps]);
 
-  /* ── Analytics derived data (reference screen 3) ── */
+  /* ── Analytics derived data (reference screen 3) — all computed from fetched RSVPs ── */
   const weeklyBars = useMemo(() => {
-    const days: { label: string; count: number }[] = [];
+    const days: { label: string; count: number; guests: number }[] = [];
     for (let i = 6; i >= 0; i--) {
       const d = new Date();
       d.setDate(d.getDate() - i);
       const key = d.toDateString();
-      const count = rsvps.filter((r) => new Date(r.created_at).toDateString() === key).length;
-      days.push({ label: d.toLocaleDateString("en-US", { weekday: "short" }), count });
+      const dayRsvps = rsvps.filter((r) => {
+        const t = new Date(r.created_at);
+        return !Number.isNaN(t.getTime()) && t.toDateString() === key;
+      });
+      days.push({
+        label: d.toLocaleDateString("en-US", { weekday: "short" }),
+        count: dayRsvps.length,
+        guests: dayRsvps
+          .filter((r) => r.attending)
+          .reduce((sum, r) => sum + (Number(r.guest_count) || 0), 0),
+      });
     }
     return days;
   }, [rsvps]);
 
   const maxBar = Math.max(...weeklyBars.map((b) => b.count), 1);
+
+  // Real daily series for the sparkline cards (was hardcoded placeholder data)
+  const dailyResponses = useMemo(() => weeklyBars.map((b) => b.count), [weeklyBars]);
+  const dailyGuests = useMemo(() => weeklyBars.map((b) => b.guests), [weeklyBars]);
+
+  // Real catering figures derived from attending parties (no magic baseline)
+  const catering = useMemo(() => {
+    const parties = rsvps.filter((r) => r.attending);
+    const total = parties.reduce((sum, r) => sum + (Number(r.guest_count) || 0), 0);
+    const largest = parties.reduce<RSVP | null>(
+      (best, r) => (!best || Number(r.guest_count) > Number(best.guest_count) ? r : best),
+      null
+    );
+    const avg = parties.length > 0 ? total / parties.length : 0;
+    return { total, avg, largest, parties: parties.length };
+  }, [rsvps]);
 
   const topParties = useMemo(
     () => [...rsvps].filter((r) => r.attending).sort((a, b) => b.guest_count - a.guest_count).slice(0, 4),
@@ -449,30 +465,6 @@ export default function AdminDashboardPage() {
             </div>
           </div>
 
-          {/* Search pill like reference */}
-          <div className="relative mt-4">
-            <svg className="pointer-events-none absolute left-4 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-black/35" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M10 18a8 8 0 110-16 8 8 0 010 16z" />
-            </svg>
-            <input
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search guests, phone, wishes..."
-              aria-label="Search guests"
-              className="h-[52px] w-full rounded-full bg-white pl-11 pr-14 font-sans text-[14px] text-black shadow-[0_6px_24px_-12px_rgba(0,0,0,0.18)] outline-none placeholder:text-black/35 focus:ring-2 focus:ring-[#6C4DFF]/30"
-            />
-            {searchTerm ? (
-              <button onClick={() => setSearchTerm("")} aria-label="Clear search" className="absolute right-2.5 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/5 text-[18px] leading-none text-black/50 transition hover:bg-[#5A52E0]/10">
-                ×
-              </button>
-            ) : (
-              <Link href="/invitation" title="View invitation" aria-label="View invitation" className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-[#EFE9FF] text-[#6C4DFF] transition hover:bg-[#E0D8FF]">
-                <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.9}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                </svg>
-              </Link>
-            )}
-          </div>
         </header>
 
         {role === "developer" && (
@@ -589,12 +581,12 @@ export default function AdminDashboardPage() {
             <div className="rounded-[24px] bg-white p-4 shadow-[0_10px_30px_-16px_rgba(0,0,0,0.2)]">
               <p className="font-sans text-[10px] text-black/45">Guests</p>
               <p data-tnum className="font-sans text-[17px] font-bold text-black">{stats.confirmedAttendees}</p>
-              <Spark points={[2, 5, 3, 7, 4, 8, 6]} color="#6C4DFF" />
+              <Spark points={dailyGuests} color="#6C4DFF" />
             </div>
             <div className="rounded-[24px] bg-white p-4 shadow-[0_10px_30px_-16px_rgba(0,0,0,0.2)]">
               <p className="font-sans text-[10px] text-black/45">Parties Done</p>
               <p data-tnum className="font-sans text-[17px] font-bold text-black">{stats.totalResponses}</p>
-              <Spark points={[3, 2, 6, 4, 7, 5, 9]} color="#22C55E" />
+              <Spark points={dailyResponses} color="#22C55E" />
             </div>
             <div className="rounded-[24px] bg-white p-4 shadow-[0_10px_30px_-16px_rgba(0,0,0,0.2)]">
               <p className="font-sans text-[10px] text-black/45">Accept Rate</p>
@@ -639,16 +631,20 @@ export default function AdminDashboardPage() {
                 <div className="relative h-[92px] w-[92px] shrink-0">
                   <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90">
                     <circle cx="50" cy="50" r="40" fill="none" stroke="#F1F1F4" strokeWidth="14" />
-                    <circle
-                      cx="50" cy="50" r="40" fill="none" stroke="#6C4DFF" strokeWidth="14" strokeLinecap="round"
-                      strokeDasharray={`${(stats.attendanceRate / 100) * 251.2} 251.2`}
-                    />
-                    <circle
-                      cx="50" cy="50" r="40" fill="none" stroke="#FF7A59" strokeWidth="14"
-                      strokeDasharray={`${((100 - stats.attendanceRate) / 100) * 251.2} 251.2`}
-                      strokeDashoffset={`${-((stats.attendanceRate / 100) * 251.2)}`}
-                      opacity={0.9}
-                    />
+                    {stats.totalResponses > 0 && (
+                      <>
+                        <circle
+                          cx="50" cy="50" r="40" fill="none" stroke="#6C4DFF" strokeWidth="14" strokeLinecap="round"
+                          strokeDasharray={`${(stats.attendanceRate / 100) * 251.2} 251.2`}
+                        />
+                        <circle
+                          cx="50" cy="50" r="40" fill="none" stroke="#FF7A59" strokeWidth="14"
+                          strokeDasharray={`${((100 - stats.attendanceRate) / 100) * 251.2} 251.2`}
+                          strokeDashoffset={`${-((stats.attendanceRate / 100) * 251.2)}`}
+                          opacity={0.9}
+                        />
+                      </>
+                    )}
                   </svg>
                   <span className="absolute inset-0 flex items-center justify-center font-sans text-[15px] font-bold text-black">
                     {stats.attendanceRate}%
@@ -684,16 +680,24 @@ export default function AdminDashboardPage() {
             </div>
           </div>
 
-          {/* Weekly goal style bar */}
+          {/* Catering figures — 100% derived from fetched attending parties */}
           <div className="flex items-center justify-between gap-3 rounded-[24px] bg-white p-5 shadow-[0_10px_30px_-16px_rgba(0,0,0,0.2)]">
-            <div>
-              <p className="font-sans text-[12px] text-black/45">Catering Goal</p>
+            <div className="min-w-0">
+              <p className="font-sans text-[12px] text-black/45">Catering · {catering.parties} {catering.parties === 1 ? "party" : "parties"}</p>
               <p className="font-sans text-[17px] font-bold text-black">
-                {stats.confirmedAttendees} <span className="text-[12px] font-medium text-black/40">/ {Math.max(stats.confirmedAttendees, 100)} guests</span>
+                {catering.total}{" "}
+                <span className="text-[12px] font-medium text-black/40">
+                  guests · avg {catering.parties > 0 ? catering.avg.toFixed(1) : "0.0"}/party
+                </span>
               </p>
+              {catering.largest && (
+                <p className="mt-0.5 truncate font-sans text-[11px] text-black/45">
+                  Largest: {catering.largest.guest_name} ({catering.largest.guest_count})
+                </p>
+              )}
             </div>
-            <span className="rounded-full bg-[#EFE9FF] px-3 py-1.5 font-sans text-[12px] font-bold text-[#6C4DFF]">
-              {Math.min(100, Math.round((stats.confirmedAttendees / Math.max(stats.confirmedAttendees, 100)) * 100))}%
+            <span className="shrink-0 rounded-full bg-[#EFE9FF] px-3 py-1.5 font-sans text-[12px] font-bold text-[#6C4DFF]">
+              {stats.attendanceRate}% accept
             </span>
           </div>
         </section>
@@ -778,11 +782,11 @@ export default function AdminDashboardPage() {
             <div className="mt-3 rounded-[24px] bg-white px-6 py-12 text-center shadow-sm">
               <p className="font-sans text-[15px] font-bold text-black">No guests found</p>
               <p className="mt-1 font-sans text-[12px] text-black/50">
-                {searchTerm || statusFilter !== "all" ? "Try a different search or filter." : "New RSVPs will appear here in real time."}
+                {statusFilter !== "all" ? "Try a different filter." : "New RSVPs will appear here in real time."}
               </p>
-              {(searchTerm || statusFilter !== "all") && (
+              {(statusFilter !== "all") && (
                 <button
-                  onClick={() => { setSearchTerm(""); setStatusFilter("all"); }}
+                  onClick={() => { setStatusFilter("all"); }}
                   className="mt-4 rounded-full bg-[#6C4DFF] px-5 py-2.5 font-sans text-[12px] font-semibold text-white"
                 >
                   Clear Filters
