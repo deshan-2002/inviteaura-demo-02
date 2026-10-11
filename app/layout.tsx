@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     description: "Together with their families, request the honour of your presence.",
     images: [
       {
-        url: "/og-image.png",
-        width: 1732,
-        height: 908,
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
         alt: "Dilanka & Piyumi Wedding Invitation",
       },
     ],
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dilanka & Piyumi | Wedding Invitation",
     description: "Together with their families, request the honour of your presence.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
