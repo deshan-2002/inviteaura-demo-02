@@ -123,9 +123,9 @@ export default function RsvpForm() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.96 }}
-              className="relative mt-8 rounded-2xl border border-gold/35 bg-[#FAF8F5] p-6 text-center sm:p-9"
+              className="relative mt-8 rounded-[30px] border border-gold/35 bg-[#F9F5F0] p-6 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:p-9"
             >
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-maroon to-maroon-deep text-gold-light shadow-md sm:h-16 sm:w-16">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-maroon to-maroon-deep text-gold-light shadow-md sm:h-20 sm:w-20">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -133,36 +133,36 @@ export default function RsvpForm() {
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-7 w-7"
+                  className="h-7 w-7 sm:h-8 sm:w-8"
                 >
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
               </div>
 
-              <h3 className="mt-4 font-display text-xl font-bold uppercase tracking-wider text-maroon sm:text-2xl">
+              <h3 className="mt-5 font-display text-2xl font-bold uppercase tracking-[0.12em] text-maroon sm:text-3xl">
                 Thank You, {submittedSummary?.name}!
               </h3>
 
-              <div className="mx-auto mt-3 max-w-md">
+              <div className="mx-auto mt-5 max-w-md">
                 {submittedSummary?.attending ? (
-                  <div className="rounded-xl border border-emerald-200 bg-emerald-50/70 px-4 py-2.5 text-xs sm:text-sm font-medium text-emerald-900">
+                  <div className="rounded-2xl border border-emerald-200 bg-emerald-50/80 px-4 py-3 text-sm font-medium text-emerald-900 shadow-sm sm:text-base">
                     Confirmed for <strong className="font-bold">{submittedSummary.count} {submittedSummary.count === 1 ? "Guest" : "Guests"}</strong>. We look forward to celebrating with you!
                   </div>
                 ) : (
-                  <div className="rounded-xl border border-rose-200 bg-rose-50/70 px-4 py-2.5 text-xs sm:text-sm font-medium text-rose-900">
-                    Your response has been noted. You will be dearly missed!
+                  <div className="rounded-2xl border border-rose-200 bg-rose-50/80 px-4 py-3 text-sm font-medium text-rose-900 shadow-sm sm:text-base">
+                    Your response has been noted. We will miss celebrating with you.
                   </div>
                 )}
               </div>
 
-              <p className="mt-3 font-sans text-xs italic text-ink/70 sm:text-sm">
-                Your RSVP response has been successfully saved to our guest registry.
+              <p className="mt-4 font-sans text-sm italic text-ink/70 sm:text-base">
+                Your RSVP has been successfully saved to our guest registry.
               </p>
 
               <button
                 type="button"
                 onClick={() => setSubmitted(false)}
-                className="mt-6 inline-flex items-center gap-2 rounded-full border border-maroon/30 bg-white px-6 py-2.5 font-sans text-xs font-semibold uppercase tracking-widest text-maroon shadow-xs transition-all duration-200 hover:border-maroon hover:bg-maroon hover:text-ivory active:scale-95"
+                className="mt-6 inline-flex items-center gap-2 rounded-full border border-maroon/30 bg-white px-6 py-3 font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-maroon shadow-[0_4px_14px_rgba(137,81,41,0.08)] transition-all duration-200 hover:border-maroon hover:bg-maroon hover:text-ivory active:scale-95 sm:px-8 sm:text-xs"
               >
                 Submit Another Response
               </button>
