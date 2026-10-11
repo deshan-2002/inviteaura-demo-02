@@ -112,7 +112,7 @@ export default function RsvpForm() {
             <OrnamentalDivider />
           </div>
           <p className="mx-auto mt-3.5 max-w-lg font-sans text-xs italic text-ink/75 sm:text-sm md:text-base">
-            Kindly respond by 1st November 2026 so we can celebrate this blessed occasion together.
+            Kindly respond by <span className="font-semibold text-maroon not-italic">10th November 2026</span> so we can celebrate this blessed occasion together.
           </p>
         </div>
 
