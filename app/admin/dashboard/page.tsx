@@ -408,7 +408,7 @@ export default function AdminDashboardPage() {
         {/* ── KPI Metric Cards ── */}
         <div className="mt-5 grid grid-cols-2 gap-2.5 min-[400px]:gap-3 sm:gap-4 lg:grid-cols-4">
           {/* 1. Total Responses */}
-          <div className="group relative overflow-hidden rounded-2xl border border-gold/25 bg-white p-3.5 min-[400px]:p-4 sm:p-5 shadow-[0_4px_20px_-4px_rgba(74,14,24,0.04)] transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md">
+          <div className="group relative overflow-hidden rounded-2xl border border-gold/25 bg-white p-3.5 min-[400px]:p-4 sm:p-5 shadow-[0_4px_20px_-4px_rgba(137,81,41,0.04)] transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md">
             <div className="flex items-start justify-between gap-2">
               <span className="admin-card-label font-sans min-w-0 leading-tight text-gold">
                 Total Submissions
@@ -475,7 +475,7 @@ export default function AdminDashboardPage() {
           </div>
 
           {/* 4. Confirmed Headcount - Matching Cohesive Luxury Card */}
-          <div className="group relative overflow-hidden rounded-2xl border border-maroon/25 bg-white p-3.5 min-[400px]:p-4 sm:p-5 shadow-[0_4px_20px_-4px_rgba(74,14,24,0.04)] transition-all hover:-translate-y-0.5 hover:border-maroon/50 hover:shadow-md">
+          <div className="group relative overflow-hidden rounded-2xl border border-maroon/25 bg-white p-3.5 min-[400px]:p-4 sm:p-5 shadow-[0_4px_20px_-4px_rgba(137,81,41,0.04)] transition-all hover:-translate-y-0.5 hover:border-maroon/50 hover:shadow-md">
             <div className="flex items-start justify-between gap-2">
               <span className="admin-card-label font-sans min-w-0 leading-tight text-maroon">
                 Total Headcount

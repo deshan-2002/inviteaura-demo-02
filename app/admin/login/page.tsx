@@ -88,7 +88,7 @@ export default function AdminLoginPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-md overflow-hidden rounded-3xl border border-gold/30 bg-white/95 p-6 min-[400px]:p-8 shadow-[0_18px_50px_-20px_rgba(74,14,24,0.3)] sm:p-10"
+        className="w-full max-w-md overflow-hidden rounded-3xl border border-gold/30 bg-white/95 p-6 min-[400px]:p-8 shadow-[0_18px_50px_-20px_rgba(137,81,41,0.3)] sm:p-10"
       >
         {/* Header */}
         <div className="text-center">
@@ -160,7 +160,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="relative mt-2 inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-gold-light/60 bg-gradient-to-r from-maroon via-maroon-deep to-maroon px-8 py-3.5 font-sans text-xs font-semibold uppercase tracking-[0.25em] text-ivory shadow-[0_8px_20px_-4px_rgba(74,14,24,0.4)] transition-all duration-300 hover:border-gold hover:shadow-[0_12px_28px_-4px_rgba(74,14,24,0.5)] disabled:cursor-not-allowed disabled:opacity-60"
+            className="relative mt-2 inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-gold-light/60 bg-gradient-to-r from-maroon via-maroon-deep to-maroon px-8 py-3.5 font-sans text-xs font-semibold uppercase tracking-[0.25em] text-ivory shadow-[0_8px_20px_-4px_rgba(137,81,41,0.4)] transition-all duration-300 hover:border-gold hover:shadow-[0_12px_28px_-4px_rgba(137,81,41,0.5)] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {loading ? (
               <span className="flex items-center gap-2">

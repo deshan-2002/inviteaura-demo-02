@@ -94,7 +94,7 @@ export default function RsvpForm() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative overflow-hidden rounded-3xl border border-gold/30 bg-white/95 p-5 shadow-[0_16px_45px_-18px_rgba(74,14,24,0.25)] sm:p-9 md:p-11"
+        className="relative overflow-hidden rounded-3xl border border-gold/30 bg-white/95 p-5 shadow-[0_16px_45px_-18px_rgba(137,81,41,0.25)] sm:p-9 md:p-11"
       >
         {/* Subtle decorative background glow */}
         <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-gold/10 blur-3xl" />
@@ -409,7 +409,7 @@ export default function RsvpForm() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-gold-light/60 bg-gradient-to-r from-maroon via-maroon-deep to-maroon px-8 py-3.5 font-sans text-xs font-semibold uppercase tracking-[0.22em] text-ivory shadow-[0_8px_22px_-4px_rgba(74,14,24,0.35)] transition-all duration-300 hover:border-gold hover:shadow-[0_12px_28px_-4px_rgba(74,14,24,0.45)] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-12 sm:text-sm"
+                  className="relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-gold-light/60 bg-gradient-to-r from-maroon via-maroon-deep to-maroon px-8 py-3.5 font-sans text-xs font-semibold uppercase tracking-[0.22em] text-ivory shadow-[0_8px_22px_-4px_rgba(137,81,41,0.35)] transition-all duration-300 hover:border-gold hover:shadow-[0_12px_28px_-4px_rgba(137,81,41,0.45)] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-12 sm:text-sm"
                 >
                   {loading ? (
                     <span className="flex items-center gap-2">

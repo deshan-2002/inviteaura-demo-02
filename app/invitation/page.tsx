@@ -166,7 +166,7 @@ function Card({
       viewport={{ once: true, amount: 0.3 }}
       variants={variant}
       transition={delay ? { delay } : undefined}
-      className={`relative overflow-hidden rounded-3xl border border-gold/25 bg-white/95 p-6 shadow-[0_14px_40px_-16px_rgba(74,14,24,0.25)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_22px_50px_-18px_rgba(74,14,24,0.35)] sm:p-8 ${className}`}
+      className={`relative overflow-hidden rounded-3xl border border-gold/25 bg-white/95 p-6 shadow-[0_14px_40px_-16px_rgba(137,81,41,0.25)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_22px_50px_-18px_rgba(137,81,41,0.35)] sm:p-8 ${className}`}
     >
       {children}
     </motion.div>
@@ -246,10 +246,10 @@ const schedule = [
 
 const venues = [
   {
-    name: "Silver Ray Grand",
+    name: "Grand Silver Ray",
     event: "Poruwa Ceremony & Lunch",
     address: "Colombo - Batticaloa Hwy, Pelmadulla, Ratnapura",
-    query: "Silver+Ray+Grand+Pelmadulla",
+    query: "Grand+Silver+Ray+Pelmadulla",
     mapUrl: "https://maps.app.goo.gl/i7DtGi27LZ7A5wLX7",
   },
 ];
@@ -348,7 +348,7 @@ export default function InvitationPage() {
             initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 whitespace-nowrap font-sans text-2xl tracking-[0.16em] text-ivory font-bold uppercase drop-shadow-[0_4px_14px_rgba(74,14,24,0.45)] sm:text-4xl md:text-5xl lg:text-[3.25rem]"
+            className="mt-5 whitespace-nowrap font-sans text-2xl tracking-[0.16em] text-ivory font-bold uppercase drop-shadow-[0_4px_14px_rgba(137,81,41,0.45)] sm:text-4xl md:text-5xl lg:text-[3.25rem]"
           >
             Dilanka <span className="text-gold-light font-normal">&amp;</span> Piyumi
           </motion.h1>
@@ -547,7 +547,7 @@ export default function InvitationPage() {
                     href={venue.mapUrl || `https://www.google.com/maps/dir/?api=1&destination=${venue.query}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-block cursor-pointer rounded-full bg-gradient-to-r from-maroon via-maroon-deep to-maroon px-6 py-2.5 font-sans text-[10px] font-medium tracking-[0.25em] uppercase text-ivory shadow-[0_8px_20px_-4px_rgba(74,14,24,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-4px_rgba(74,14,24,0.5)] sm:text-[11px]"
+                    className="mt-5 inline-block cursor-pointer rounded-full bg-gradient-to-r from-maroon via-maroon-deep to-maroon px-6 py-2.5 font-sans text-[10px] font-medium tracking-[0.25em] uppercase text-ivory shadow-[0_8px_20px_-4px_rgba(137,81,41,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-4px_rgba(137,81,41,0.5)] sm:text-[11px]"
                   >
                     Get Directions
                   </a>
@@ -592,10 +592,10 @@ export default function InvitationPage() {
                 transition={{ delay: i * 0.08 }}
                 className="group relative flex gap-5 pb-7 last:pb-0 sm:gap-7"
               >
-                <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-gold/50 bg-ivory text-gold shadow-[0_6px_18px_-6px_rgba(74,14,24,0.3)] transition-all duration-300 group-hover:scale-110 group-hover:border-gold group-hover:bg-gradient-to-br group-hover:from-maroon group-hover:to-maroon-deep group-hover:text-gold-light sm:h-16 sm:w-16">
+                <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-gold/50 bg-ivory text-gold shadow-[0_6px_18px_-6px_rgba(137,81,41,0.3)] transition-all duration-300 group-hover:scale-110 group-hover:border-gold group-hover:bg-gradient-to-br group-hover:from-maroon group-hover:to-maroon-deep group-hover:text-gold-light sm:h-16 sm:w-16">
                   {row.icon}
                 </div>
-                <div className="flex-1 rounded-2xl border border-gold/20 bg-white/95 p-5 shadow-[0_8px_22px_-12px_rgba(74,14,24,0.2)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-gold/40 group-hover:shadow-[0_14px_32px_-12px_rgba(74,14,24,0.35)] sm:p-6">
+                <div className="flex-1 rounded-2xl border border-gold/20 bg-white/95 p-5 shadow-[0_8px_22px_-12px_rgba(137,81,41,0.2)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-gold/40 group-hover:shadow-[0_14px_32px_-12px_rgba(137,81,41,0.35)] sm:p-6">
                   <div className="flex items-center justify-between gap-4">
                     <div className="min-w-0">
                       <h3 className="font-sans text-lg font-semibold uppercase tracking-[0.08em] text-maroon sm:text-xl">
@@ -605,7 +605,7 @@ export default function InvitationPage() {
                         {row.desc}
                       </p>
                     </div>
-                    <div className="shrink-0 rounded-2xl border border-gold/30 bg-gradient-to-br from-maroon to-maroon-deep px-4 py-2.5 text-center shadow-[0_8px_18px_-8px_rgba(74,14,24,0.45)] sm:px-5">
+                    <div className="shrink-0 rounded-2xl border border-gold/30 bg-gradient-to-br from-maroon to-maroon-deep px-4 py-2.5 text-center shadow-[0_8px_18px_-8px_rgba(137,81,41,0.45)] sm:px-5">
                       <span className="block font-sans text-lg font-semibold leading-none text-gold-light sm:text-xl">
                         {row.time.split(" ")[0]}
                       </span>
@@ -827,7 +827,7 @@ export default function InvitationPage() {
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             onClick={scrollToTop}
             aria-label="Back to top"
-            className="fixed bottom-4 right-4 z-40 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/40 bg-gradient-to-br from-maroon/75 to-maroon-deep/75 shadow-[0_8px_24px_-6px_rgba(74,14,24,0.5)] backdrop-blur-xl transition-all duration-300 hover:border-gold-light sm:bottom-6 sm:right-6 sm:h-14 sm:w-14"
+            className="fixed bottom-4 right-4 z-40 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/40 bg-gradient-to-br from-maroon/75 to-maroon-deep/75 shadow-[0_8px_24px_-6px_rgba(137,81,41,0.5)] backdrop-blur-xl transition-all duration-300 hover:border-gold-light sm:bottom-6 sm:right-6 sm:h-14 sm:w-14"
           >
             <svg viewBox="0 0 56 56" className="pointer-events-none absolute inset-0 h-full w-full -rotate-90" aria-hidden="true">
               <circle

@@ -11,8 +11,8 @@ const config: Config = {
         ivory: "#F6EEE0",
         champagne: "#EDE1C6",
         maroon: {
-          DEFAULT: "#6E1423",
-          deep: "#4A0E18",
+          DEFAULT: "#895129",
+          deep: "#693E1F",
         },
         gold: {
           DEFAULT: "#B4913F",

@@ -138,7 +138,7 @@ export default function HeroInvite() {
           }}
         />
         {/* subtle vignette for depth */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(74,14,24,0.18)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(137,81,41,0.18)_100%)]" />
         <div className="absolute inset-0 bg-ivory/20" />
       </div>
 
@@ -149,19 +149,6 @@ export default function HeroInvite() {
         animate="visible"
         className="relative z-10 flex h-full w-full max-w-md flex-col items-center justify-center text-center gap-2 sm:gap-3 md:gap-4"
       >
-        {/* TOP SECTION: Divider + Invitation Header */}
-        <motion.div variants={fadeUp} className="flex w-full flex-col items-center pt-1 sm:pt-2">
-          <OrnamentalDivider />
-
-          <h2 className="mt-2 sm:mt-3 font-display text-[11px] sm:text-sm md:text-base tracking-[0.24em] sm:tracking-[0.3em] text-maroon font-semibold uppercase drop-shadow-[0_1px_2px_rgba(246,238,224,0.9)]">
-            Together With Their Families
-          </h2>
-
-          <p className="mt-1 sm:mt-1.5 max-w-lg font-display text-[10px] sm:text-xs md:text-sm tracking-[0.2em] sm:tracking-[0.24em] text-gold font-medium uppercase">
-            Request The Honour Of Your Presence
-          </p>
-        </motion.div>
-
         {/* MIDDLE SECTION: Center Couple Portrait - scales with screen */}
         <motion.div
           variants={fadeUp}
@@ -222,7 +209,7 @@ export default function HeroInvite() {
               alt="The couple"
               fill
               priority
-              className="object-contain drop-shadow-[0_18px_35px_rgba(74,14,24,0.28)]"
+              className="object-contain drop-shadow-[0_18px_35px_rgba(137,81,41,0.28)]"
             />
           </motion.div>
         </motion.div>
@@ -234,7 +221,7 @@ export default function HeroInvite() {
             whileTap={{ scale: 0.97 }}
             type="button"
             onClick={() => router.push("/invitation")}
-            className="relative mt-3 sm:mt-4 cursor-pointer overflow-hidden rounded-full border border-gold-light/70 bg-gradient-to-r from-maroon via-maroon-deep to-maroon px-7 py-2.5 sm:px-9 sm:py-3 font-sans text-[11px] sm:text-xs md:text-sm tracking-[0.22em] sm:tracking-[0.26em] text-ivory font-semibold uppercase shadow-[0_8px_22px_-3px_rgba(74,14,24,0.4),0_0_15px_rgba(212,185,124,0.25)] transition-all duration-300 hover:border-gold hover:shadow-[0_12px_28px_-3px_rgba(74,14,24,0.5),0_0_22px_rgba(212,185,124,0.4)]"
+            className="relative mt-3 sm:mt-4 cursor-pointer overflow-hidden rounded-full border border-gold-light/70 bg-gradient-to-r from-maroon via-maroon-deep to-maroon px-7 py-2.5 sm:px-9 sm:py-3 font-sans text-[11px] sm:text-xs md:text-sm tracking-[0.22em] sm:tracking-[0.26em] text-ivory font-semibold uppercase shadow-[0_8px_22px_-3px_rgba(137,81,41,0.4),0_0_15px_rgba(212,185,124,0.25)] transition-all duration-300 hover:border-gold hover:shadow-[0_12px_28px_-3px_rgba(137,81,41,0.5),0_0_22px_rgba(212,185,124,0.4)]"
           >
             <span className="relative z-10">Open Invitation</span>
             {/* flowing shine sweep */}
