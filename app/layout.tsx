@@ -33,15 +33,24 @@ export const metadata: Metadata = {
   description: "Together with their families, request the honour of your presence.",
   openGraph: {
     type: "website",
+    url: siteUrl,
+    siteName: "Dilanka & Piyumi Wedding",
     title: "Dilanka & Piyumi | Wedding Invitation",
     description: "Together with their families, request the honour of your presence.",
-    images: ["/images/couple.png"],
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dilanka & Piyumi Wedding Invitation",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Dilanka & Piyumi | Wedding Invitation",
     description: "Together with their families, request the honour of your presence.",
-    images: ["/images/couple.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
