@@ -21,9 +21,26 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Dilanka & Piyumi | Wedding Invitation",
   description: "Together with their families, request the honour of your presence.",
+  openGraph: {
+    type: "website",
+    title: "Dilanka & Piyumi | Wedding Invitation",
+    description: "Together with their families, request the honour of your presence.",
+    images: ["/images/couple.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dilanka & Piyumi | Wedding Invitation",
+    description: "Together with their families, request the honour of your presence.",
+    images: ["/images/couple.png"],
+  },
 };
 
 export default function RootLayout({
